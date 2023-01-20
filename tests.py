@@ -1,7 +1,8 @@
 import price_check
+import recursiveDigitSum
 import unittest
 
-class Test_TestIncrementDecrement(unittest.TestCase):
+class Test(unittest.TestCase):
     def test1(self):
         self.assertEqual(price_check.priceCheck(products=['eggs', 'milk', 'cheese'],
 productPrices=[2.89, 3.29, 5.79],
@@ -14,6 +15,9 @@ soldPrice=[2.89, 2.99, 5.97, 3.29]
 	productPrices=[16.89, 56.92, 20.89, 345.99],
 	productSold=['rice', 'cheese'],
 	soldPrice=[18.99, 400.89]), 2)
+
+    def test3(self):
+        self.assertEqual(recursiveDigitSum.recursive_sum_of_digits(2347623),27)
 
 if __name__ == '__main__':
     unittest.main()
