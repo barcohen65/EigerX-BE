@@ -1,6 +1,5 @@
 import mysql.connector
 
-"CREATE DATABASE mydb;"
 # Connect to the database
 con = mysql.connector.connect(user='root', password='newpassword', host='localhost')
 
