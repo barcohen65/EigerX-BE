@@ -1,4 +1,4 @@
-def priceCheck(products, productPrices, productSold, soldPrice):
+def price_check(products, productPrices, productSold, soldPrice):
     errors = 0
     numOfProducts = len(productSold)
     for i in range(numOfProducts):
