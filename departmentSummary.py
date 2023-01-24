@@ -1,6 +1,6 @@
 import mysql.connector
 
-# Connect to the database
+# Create a connection object
 con = mysql.connector.connect(user='root', password='newpassword', host='localhost')
 
 # Create a cursor object
@@ -26,10 +26,8 @@ cursor.execute("INSERT INTO EMPLOYEE (ID, NAME, SALARY, DEPT_ID) VALUES (3, 'Bob
 cursor.execute("INSERT INTO EMPLOYEE (ID, NAME, SALARY, DEPT_ID) VALUES (4, 'Scarlet', 4685, 1);")
 cursor.execute("INSERT INTO EMPLOYEE (ID, NAME, SALARY, DEPT_ID) VALUES (5, 'Ileana', 1151, 4);")
 
-# Define the query
+# Define and execute the query
 query = "SELECT Department.NAME as 'Department Name', COUNT(Employee.ID) as 'Employee Count' FROM Department LEFT JOIN Employee ON Department.ID = Employee.DEPT_ID GROUP BY Department.NAME ORDER BY COUNT(Employee.ID) DESC, Department.NAME ASC;"
-
-# Execute the query
 cursor.execute(query)
 
 # Fetch and print the desired results
